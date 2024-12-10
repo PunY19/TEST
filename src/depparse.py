@@ -1,7 +1,3 @@
-import logging
-
-logging.getLogger(__name__).setLevel(logging.ERROR)
-
 import stanza
 from stanza.resources.common import download_models
 
@@ -27,6 +23,13 @@ download_models(
     model_dir='/root/stanza_resources',
     model_url="https://huggingface.co/nlp-chula/Thai-dependency-parser/resolve/main/th_best_transformer_parser_checkpoint.pt"
 )
+import logging
+import warnings
+
+warnings.filterwarnings("ignore", category=UserWarning)
+logging.getLogger("stanza").setLevel(logging.ERROR)
+logging.getLogger("stanza.models").setLevel(logging.ERROR)
+logging.getLogger("stanza.models.pos").setLevel(logging.ERROR)
 
 from stanza.pipeline.processor import ProcessorVariant, register_processor_variant
 from stanza.models.common.doc import Document
