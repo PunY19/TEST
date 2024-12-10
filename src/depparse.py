@@ -1,3 +1,7 @@
+import logging
+
+logging.getLogger(__name__).setLevel(logging.ERROR)
+
 import stanza
 from stanza.resources.common import download_models
 
