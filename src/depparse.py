@@ -89,8 +89,4 @@ def load_model():
 
 def depparse(text, depparse_model):
     token = depparse_model(text.replace(' ', ''))
-    del_list = ['lemma','upos','xpos']
-    for i in token[0]:
-        for l in del_list:
-            i.pop(l, None)
     return token
