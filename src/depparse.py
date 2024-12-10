@@ -78,7 +78,7 @@ def load_model():
     nlp = stanza.Pipeline(
     lang='th',
     processors='tokenize,pos,lemma,depparse',
-    depparse_model_path= "/root/stanza_resources/th/depparse/th_best_transformer_parser_checkpoint.pt",
+    depparse_model_path= "/root/stanza_resources/th/depparse/best_transformer_parser.pt",
     depparse_pretrain_path= "/root/stanza_resources/th/pretrain/fasttext157.pt",
     depparse_forward_charlm_path="/root/stanza_resources/th/forward_charlm/oscar.pt",
     depparse_backward_charlm_path="/root/stanza_resources/th/backward_charlm/oscar.pt",
